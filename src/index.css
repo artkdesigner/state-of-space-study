@@ -1,13 +1,24 @@
 @import 'tailwindcss';
 
-/*
-  Токены дизайн-системы из Figma (цвета, шрифты, отступы) добавлять сюда,
-  например:
-  @theme {
-    --color-brand: #...;
-    --font-heading: ...;
-  }
-*/
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500 600;
+  font-display: swap;
+  src: url('/fonts/manrope-latin.woff2') format('woff2');
+}
+
+@theme {
+  --color-dark-primary: #33302f;
+  --color-cream: #f5f2ec;
+  --font-sans: 'Manrope', sans-serif;
+}
+
+/* Rem-скейлинг корня: 1rem = 16px на ширине эталонного десктоп-фрейма (1920px).
+   Мобильная/планшетная зоны появятся здесь, когда будут готовы те макеты. */
+html {
+  font-size: 0.83333vw;
+}
 
 :root {
   color-scheme: light dark;
@@ -15,6 +26,8 @@
 
 body {
   margin: 0;
+  background: var(--color-cream);
+  font-family: var(--font-sans);
 }
 
 /* Уважать системную настройку «уменьшить движение» — гасит все reveal-переходы
